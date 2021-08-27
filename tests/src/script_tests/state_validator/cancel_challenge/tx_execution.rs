@@ -124,7 +124,7 @@ fn test_cancel_tx_execute() {
             StateDBMode::ReadOnly,
         )
         .unwrap();
-        let tree = state_db.account_state_tree().unwrap();
+        let tree = state_db.state_tree().unwrap();
         let sender_id = tree
             .get_account_id_by_script_hash(&sender_script.hash().into())
             .unwrap()
@@ -248,7 +248,7 @@ fn test_cancel_tx_execute() {
                 StateDBMode::ReadOnly,
             )
             .unwrap();
-            let mut tree = state_db.account_state_tree().unwrap();
+            let mut tree = state_db.state_tree().unwrap();
             tree.tracker_mut().enable();
             let sender_id = tree
                 .get_account_id_by_script_hash(&sender_script.hash().into())

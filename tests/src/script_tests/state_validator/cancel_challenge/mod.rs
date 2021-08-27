@@ -101,7 +101,8 @@ fn test_burn_challenge_capacity() {
                 .build(),
         ];
         let produce_block_result = {
-            let mem_pool = chain.mem_pool().lock();
+            let mut mem_pool = chain.mem_pool().unwrap();
+            let mut mem_pool = smol::block_on(mem_pool.lock());
             construct_block(&chain, &mem_pool, deposit_requests.clone()).unwrap()
         };
         let rollup_cell = gw_types::packed::CellOutput::new_unchecked(rollup_cell.as_bytes());
@@ -123,7 +124,8 @@ fn test_burn_challenge_capacity() {
             )
             .build();
         let produce_block_result = {
-            let mut mem_pool = chain.mem_pool().lock();
+            let mut mem_pool = chain.mem_pool().unwrap();
+            let mut mem_pool = smol::block_on(mem_pool.lock());
             mem_pool.push_withdrawal_request(withdrawal).unwrap();
             construct_block(&chain, &mem_pool, Vec::default()).unwrap()
         };
@@ -191,6 +193,7 @@ fn test_burn_challenge_capacity() {
         .unwrap();
     let challenge_witness = {
         let witness = {
+            //TODO
             let withdrawal_proof: Bytes = {
                 let mut tree: gw_common::smt::SMT<DefaultStore<H256>> = Default::default();
                 for (index, withdrawal) in challenged_block.withdrawals().into_iter().enumerate() {

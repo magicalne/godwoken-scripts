@@ -2,7 +2,8 @@ use gw_common::blake2b::new_blake2b;
 use gw_common::state::{to_short_address, State};
 use gw_common::H256;
 use gw_generator::{account_lock_manage::AccountLockManage, Generator};
-use gw_generator::{error::TransactionError, traits::StateExt, types::RollupContext};
+use gw_generator::{error::TransactionError, traits::StateExt};
+use gw_types::offchain::RollupContext;
 use gw_traits::{ChainStore, CodeStore};
 use gw_types::{
     bytes::Bytes,
