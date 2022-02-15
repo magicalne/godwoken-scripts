@@ -280,10 +280,11 @@ dependencies = [
 [[package]]
 name = "gw-common"
 version = "0.1.0"
-source = "git+https://github.com/nervosnetwork/godwoken.git?rev=acc66142052a7ef5d38aa58e2f4c83d1ef4bab60#acc66142052a7ef5d38aa58e2f4c83d1ef4bab60"
+source = "git+https://github.com/jjyr/godwoken.git?rev=018c07dae06a71284bdd1d6ccacf515fdf135b98#018c07dae06a71284bdd1d6ccacf515fdf135b98"
 dependencies = [
  "cfg-if 0.1.10",
  "gw-hash",
+ "gw-types",
  "merkle-cbt",
  "primitive-types",
  "sparse-merkle-tree",
@@ -292,7 +293,7 @@ dependencies = [
 [[package]]
 name = "gw-hash"
 version = "0.1.0"
-source = "git+https://github.com/nervosnetwork/godwoken.git?rev=acc66142052a7ef5d38aa58e2f4c83d1ef4bab60#acc66142052a7ef5d38aa58e2f4c83d1ef4bab60"
+source = "git+https://github.com/jjyr/godwoken.git?rev=018c07dae06a71284bdd1d6ccacf515fdf135b98#018c07dae06a71284bdd1d6ccacf515fdf135b98"
 dependencies = [
  "blake2b-ref",
 ]
@@ -308,7 +309,7 @@ dependencies = [
 [[package]]
 name = "gw-types"
 version = "0.1.0"
-source = "git+https://github.com/nervosnetwork/godwoken.git?rev=acc66142052a7ef5d38aa58e2f4c83d1ef4bab60#acc66142052a7ef5d38aa58e2f4c83d1ef4bab60"
+source = "git+https://github.com/jjyr/godwoken.git?rev=018c07dae06a71284bdd1d6ccacf515fdf135b98#018c07dae06a71284bdd1d6ccacf515fdf135b98"
 dependencies = [
  "cfg-if 0.1.10",
  "gw-hash",
